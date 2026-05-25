@@ -1,66 +1,51 @@
-# review
+---
+name: review
+description: Production-quality PR optimization loop for AI-augmented development. Hard opinionated on test coverage, strong emphasis on self-review polish, and works with any AI reviewer (Devin, Codex, Greptile, Cursor, Claude, etc.). Use when you want to turn reviewer feedback into high-quality, well-tested, well-documented code.
+---
 
-Production-quality PR optimization loop for AI-augmented development.
+# Review
 
-**Install:**
-```bash
-npx skills add https://github.com/OctavianTocan/review
-```
-
-Then invoke with `/review` in your agent.
-
-## What This Skill Does
-
-`/review` helps you ship higher-quality pull requests by enforcing a disciplined optimization process:
-
-1. **Hard pre-flight coverage gate** — Test coverage is non-negotiable. Weak coverage stops the process by default.
-2. **Reviewer feedback consumption** — Works with output from *any* reviewer (Devin, Codex, Greptile, human comments, Cursor, Claude, etc.). No spawning of review sessions.
-3. **Self-review polish pass** — The highest-leverage step. Many PRs pass reviewers but still contain mediocre code. This pass prevents that.
-4. **Stacked PR / Graphite hygiene** — Strong awareness of rebase and stack discipline.
+A focused, opinionated skill for getting maximum value from AI code reviewers through disciplined iteration and rigorous self-review.
 
 ## Core Philosophy
 
-- **Coverage over reviewer scores.** A clean reviewer dashboard with 40% test coverage is a liability, not a win.
-- **Polish is more important than chasing scores.** Self-review discipline beats automated reviewer approval.
-- **Reviewer-agnostic by design.** The skill consumes feedback; it does not produce reviews or spawn reviewer agents.
-- **PR author workflow, not reviewer workflow.** This is for engineers iterating on their own PRs, not for autonomous review systems.
+- **Coverage over scores.** A 5/5 reviewer score with weak tests is a liability.
+- **Polish > chasing metrics.** The self-review pass is the highest-leverage step.
+- **Reviewer-agnostic.** Consumes output from Devin, Codex, Greptile, human comments, etc. Does not spawn reviewer sessions.
+- **Stack-aware.** Strong support for Graphite and stacked PR workflows.
 
 ## Commands
 
-| Command | Purpose |
-|---------|---------|
-| `/review` or `/review start` | Begin the full review optimization flow on current branch/PR |
-| `/review preflight` | Run the hard coverage pre-flight gate only |
-| `/review polish` | Execute the self-review polish pass (highest value step) |
-| `/review loop` | Enter the reviewer feedback consumption loop |
-| `/review stack` | Check and fix rebase/stack hygiene (Graphite-aware) |
-| `/review help` | Show usage and subcommand reference |
+| Command                  | Purpose |
+|--------------------------|---------|
+| `/review`                | Start the full guided optimization flow |
+| `/review preflight`      | Run the hard coverage gate only |
+| `/review polish`         | Execute the high-signal self-review polish pass |
+| `/review loop`           | Enter reviewer feedback consumption loop |
+| `/review stack`          | Check rebase and Graphite stack hygiene |
+| `/review help`           | Show detailed command reference |
 
 ## Quick Start
 
 ```bash
-# On a branch with an open PR that has reviewer feedback:
+# On a branch with an open PR
 /review
-
-# Or jump straight to the most important step:
-/review polish
 ```
+
+The skill will walk you through coverage validation, feedback processing, fixes, and the critical polish pass.
 
 ## Structure
 
-This skill follows the standard create-skill cookbook format:
+This skill follows the standard cookbook-based format:
 
-- **SKILL.md** (this file) — Entry point, philosophy, command surface
-- **cookbook/** — Detailed, imperative workflows for each sub-operation
-- **references/** — Supporting models, patterns, and cross-cutting guidance
-- **examples/** — Concrete, self-contained examples (no private references)
+- `SKILL.md` — This file (lean router)
+- `cookbook/` — Detailed imperative workflows
+- `references/` — Models, patterns, and guidance
+- `examples/` — Realistic, self-contained public examples
 
 ## Requirements
 
-- GitHub CLI (`gh`) authenticated
-- A clean working tree (or willingness to commit changes)
-- Honest assessment of test coverage — this skill will challenge you
+- `gh` (GitHub CLI) authenticated
+- Willingness to be honest about test coverage
 
-## License
-
-MIT. Public skill. Use it. Improve it. Share it.
+MIT licensed. Public skill.
