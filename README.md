@@ -1,4 +1,4 @@
-# review
+# loop-review
 
 Production-quality PR optimization loop for AI-augmented development.
 
@@ -9,10 +9,10 @@ Works with **any** reviewer output (Devin, Codex, Greptile, human comments, Curs
 ## Install
 
 ```bash
-npx skills add https://github.com/OctavianTocan/review
+npx skills add https://github.com/OctavianTocan/loop-review
 ```
 
-Then use `/review` (or any subcommand) in your agent.
+Then use `/loop-review` (or any subcommand) in your agent.
 
 ## Philosophy
 
@@ -26,8 +26,8 @@ Then use `/review` (or any subcommand) in your agent.
 ## Core Commands
 
 ```
-/review              Start the full optimization flow (recommended)
-/review preflight    Run coverage gate only (hard stop on weak coverage)
+/loop-review           Start the full optimization flow (recommended)
+ /loop-review preflight Run coverage gate only (hard stop on weak coverage)
 /review polish       Execute the highest-value self-review pass
 /review loop         Process reviewer feedback iteratively
 /review stack        Graphite / stacked PR rebase hygiene check

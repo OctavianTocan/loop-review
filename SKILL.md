@@ -1,9 +1,9 @@
 ---
-name: review
+name: loop-review
 description: Production-quality PR optimization loop for AI-augmented development. Hard opinionated on test coverage, strong emphasis on self-review polish, and works with any AI reviewer (Devin, Codex, Greptile, Cursor, Claude, etc.). Use when you want to turn reviewer feedback into high-quality, well-tested, well-documented code.
 ---
 
-# Review
+# Loop Review
 
 A focused, opinionated skill for getting maximum value from AI code reviewers through disciplined iteration and rigorous self-review.
 
@@ -18,18 +18,21 @@ A focused, opinionated skill for getting maximum value from AI code reviewers th
 
 | Command                  | Purpose |
 |--------------------------|---------|
-| `/review`                | Start the full guided optimization flow |
-| `/review preflight`      | Run the hard coverage gate only |
-| `/review polish`         | Execute the high-signal self-review polish pass |
-| `/review loop`           | Enter reviewer feedback consumption loop |
-| `/review stack`          | Check rebase and Graphite stack hygiene |
-| `/review help`           | Show detailed command reference |
+| `/loop-review`           | Start the full guided optimization flow |
+| `/loop-review preflight` | Run the hard coverage gate only |
+| `/loop-review polish`    | Execute the high-signal self-review polish pass |
+| `/loop-review loop`      | Enter reviewer feedback consumption loop |
+| `/loop-review stack`     | Check rebase and Graphite stack hygiene |
+| `/loop-review help`      | Show detailed command reference |
 
 ## Quick Start
 
 ```bash
-# On a branch with an open PR
-/review
+# On a branch with an open PR that has reviewer feedback:
+/loop-review
+
+# Or jump straight to the most important step:
+/loop-review polish
 ```
 
 The skill will walk you through coverage validation, feedback processing, fixes, and the critical polish pass.
